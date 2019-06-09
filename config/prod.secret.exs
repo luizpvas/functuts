@@ -16,7 +16,7 @@ config :tuts, TutsWeb.Endpoint,
   http: [:inet6, port: 80],
   # force_ssl: [hsts: true],
   https: [
-    port: 443,
+    port: 4043,
     opt_app: :tuts,
     keyfile: "/etc/letsencrypt/live/functuts.com/privkey.pem",
     cacertfile: "/etc/letsencrypt/live/functuts.com/chain.pem",
