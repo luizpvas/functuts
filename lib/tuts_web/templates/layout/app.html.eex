@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Functuts</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK:400,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </head>
+  <body class="font-sans leading-normal bg-gray-100">
+    <div class="menu">
+      <div class="m-2">
+        <a href="<%= Routes.tutorial_path(@conn, :index) %>">
+          <img class="w-1/3 md:w-2/3 mx-auto mb-4 mt-4" src="<%= Routes.static_path(@conn, "/images/logo2.svg") %>">
+        </a>
+
+        <div class="relative">
+          <input id="search" class="border-2 rounded py-1 pl-6 text-sm block w-full text-gray-700" placeholder="Search...">
+          <svg class="absolute top-0 left-0 text-gray-500 fill-current" style="width: 15px; height: 15px; margin-top: 9px; margin-left: 8px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/></svg>
+        </div>
+      </div>
+
+      <%= for tutorial <- @tutorials do %>
+        <%= menu_link @conn, tutorial[:title], Routes.tutorial_path(@conn, :show, tutorial[:slug]) %>
+      <% end %>
+
+      <div class="border-t text-sm p-2 text-gray-700">
+        Hi, I'm Luiz. <a href="https://twitter.com/luizpvasc" class="underline">Follow me</a>  on Twitter for updates whenever there's a new tutorial.
+      </div>
+    </div>
+
+    <main role="main" class="main">
+      <div class="fixed top-0 left-0 w-full block md:hidden">
+        <div class="flex justify-end p-3">
+          <button class="z-10" id="mobile-open-menu">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+
+          <button class="z-10 hidden" id="mobile-close-menu" class="hidden">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+  </body>
+</html>

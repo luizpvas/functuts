@@ -1,0 +1,28 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import "prism.css";
+@import "content.css";
+
+
+.menu {
+  @apply .hidden .fixed .bg-white .shadow-lg .w-full .top-0 .left-0;
+}
+
+.main {
+}
+
+@screen md {
+  .menu {
+    @apply .block .fixed .h-screen .bg-white .border-r .shadow-none;
+    width: 240px;
+  }
+  
+  .main {
+    margin-left: 240px;
+    max-width: 740px;
+  }
+}
