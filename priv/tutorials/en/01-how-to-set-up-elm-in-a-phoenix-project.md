@@ -1,6 +1,6 @@
-# How to setup Elm in a Phoenix Project
+# How to set up Elm in a Phoenix Project
 
-In this guide we're gonna configure webpack to compile Elm and TailwindCSS in a brand new Phoenix project. Phoenix switched to Webpack in version 1.4 making this task much easier.
+In this guide we're gonna configure webpack to compile Elm and TailwindCSS in a brand-new Phoenix project. Phoenix switched to Webpack in version 1.4 making this task much easier.
 
 Let's create an empty project:
 
@@ -40,7 +40,7 @@ Knowing all that, would you like me to create an elm.json file now? [Y/n]: Y
 Okay, I created it. Now read that link!
 ```
 
-We should now see `elm.json` in the assets directory. Let's edit the source directory in this file so we can have a top-level "elm" directory with our Elm code.
+We should now see `elm.json` in the assets directory. Let's edit the source directory in this file, so we can have a top-level "elm" directory with our Elm code.
 
 ```json
 // Replace the following line in elm.json...
