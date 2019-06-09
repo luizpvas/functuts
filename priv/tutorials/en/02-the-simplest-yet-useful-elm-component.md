@@ -19,7 +19,7 @@ The selected color should be highlighted somehow. **Let's get started**.
 
 It's a common practice to start thinking about the shape of the data when facing a new problem in Elm, and the first thing about this component that comes to mind is the selected color &mdash; that's a **piece of data** that can change over time.
 
-But before we go there we must decide _what_ a color is. We could go with three numbers between 0-255 representing RGB (e.g. 143, 50, 21) or a String representing the hexedecimal format (e.g. #8f3215). Let's go with a string for no particular reason and defined our Model with a selected color.
+But before we go there we must decide _what_ a color is. We could go with three numbers between 0-255 representing RGB (e.g. 143, 50, 21) or a String representing the hexadecimal format (e.g. #8f3215). Let's go with a string for no particular reason and defined our Model with a selected color.
 
 ```elm
 type alias Model =
@@ -52,10 +52,10 @@ type alias Model =
     }
 ```
 
-Wel... maybe, but I don't like putting it in the model because it's pretty much a static list, a constant. Here's a rule of thumb for deciding if we should store it in the model:
+Well... maybe, but I don't like putting it in the model because it's pretty much a static list, a constant. Here's a rule of thumb for deciding if we should store it in the model:
 
 -   Does it change over time? If so, the only way to update data in Elm is if it lives in the model.
--   Does the component load with different arguments? If it is an initialization argument it must also live in the model.
+-   Does the component load with different arguments? An initialization argument must also live in the model.
 
 Another way to think about this is if we were modeling a relational database. Would we create a "colors" table to store the list of possible colors as records? I would rather put it in code, maybe directly in the view code. With this in mind, let's declare a static list of colors outside of our Model.
 
@@ -80,7 +80,7 @@ Now that we have an idea about the shape of the data, let's try to come up with 
 
 > We're still not thinking about UI, just actions. For example, I'm still not sure how "Clear selection" is good look - maybe a button next to the input's label, maybe clicking again on the selected color.
 
-With this in mind, we can enumare the actions as its own type:
+With this in mind, we can enumerate the actions as its own type:
 
 ```elm
 type Msg
@@ -117,13 +117,13 @@ Wow, that's a lot to take in. Let's break it apart:
 -   `{ record | field = newVal }` is the syntax for updating a record.
 -   The Elm runtime is responsible for calling this function, as you'll see in a minute.
 
-Oh, did I forgot to mention `case _variable_ of` is exaustive? It means that if we forgot to handle a value for `Msg` or if we typed a wrong value, the compiler would complain:
+Oh, did I forgot to mention `case _variable_ of` is exhaustive? It means that if we forgot to handle a value for `Msg` or if we typed a wrong value, the compiler would complain:
 
 ![Example an error message for a missing](/images/examples/elm-forgot-branch-error-msg.png)
 
 ## Writing the main function
 
-It's almost time to build the UI &mdash; but before that, let's take a looooong jump and define our main program with the code below. It may be a lot to take in, so take a deep breath. The reason we need all this code is because even the smallest Elm program, defined with `Browser.element`, needs the following functions:
+It's almost time to build the UI &mdash; but before that, let's take a looooong jump and define our main program with the code below. It may be a lot to take in, so take a deep breath. The reason we need all this code is that even the smallest Elm program, defined with `Browser.element`, needs the following functions:
 
 -   `init` - Receives arguments from our Javascript and builds the initial Model
 -   `subscriptions` - Used to listen for external events, such as websockets and mouse drag events. We won't use them in this tutorial.
@@ -323,7 +323,7 @@ we're not passing the argument we just added. If you're using an editor with som
 
 ![](/images/examples/colorpicker-editor-error.png)
 
-Let's fix it by wrapping in an annonymous function that runs the check for the selected color. In the example below `(model.selectedColor == hex)` evaluates to either True or False, which is passed as the argument `isSelected` in our `viewColor` function. 
+Let's fix it by wrapping in an anonymous function that runs the check for the selected color. In the example below `(model.selectedColor == hex)` evaluates to either True or False, which is passed as the argument `isSelected` in our `viewColor` function. 
 
 ```elm
 view : Model -> Html Msg
@@ -435,4 +435,4 @@ Woosh, that was long, so treat yourself with a nice cup of coffee.
 
 ## Challenge
 
-* Our boss just called from a meeting. They loved our colorpicker and they want to use in another part of the software - but there is one problem. The hidden input's name should be different there in order to match the database column name. How would you implement this change?
+* Our boss just called from a meeting. They loved our colorpicker, and they want to use in another part of the software - but there is one problem. The hidden input's name should be different there in order to match the database column name. How would you implement this change?

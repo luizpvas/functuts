@@ -1,4 +1,4 @@
-# How to set up Elm in a Phoenix Project
+# How to set up Elm in a Phoenix project
 
 In this guide we're gonna configure webpack to compile Elm and TailwindCSS in a brand-new Phoenix project. Phoenix switched to Webpack in version 1.4 making this task much easier.
 
