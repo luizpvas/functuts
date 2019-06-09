@@ -34,7 +34,7 @@ It looks like we're about 304 req/sec.
 
 ## Thinking about how to cache
 
-Caching is knowingly hard so we should do our best to limit how things can go wrong, and one of the best ways to do this is ensuring a short life span for the cache. If things go wrong we're gonna be out of sync for at most, let's say, 5 minutes.
+Caching is knowingly hard, so we should do our best to limit how things can go wrong, and one of the best ways to do this is ensuring a short life span for the cache. If things go wrong we're gonna be out of sync for at most, let's say, 5 minutes.
 
 In some cases we can even completely ignore manual expiration and let it be out of sync for 5 minutes. It's not the end of the world if I publish a new tutorial and it takes 5 minutes to appear on the menu. For this strategy to work, we're gonna need auto-expiration, and luckily for us, `con_cache` already implements it with a feature called TTL (time to live). Let's look at some code.
 
@@ -119,9 +119,9 @@ end
 
 ## Fixing our development experience
 
-Our cache is working!... but sadly it messes up the developemnt experience. Right now the cache is applied to all environments, including dev. We don't want this, otherwise, we'll lose the ability to make a change to the markdown file and see the result instantly when reloading the browser.
+Our cache is working!... but sadly it messes up the development experience. Right now the cache is applied to all environments, including dev. We don't want this, otherwise, we'll lose the ability to make a change to the markdown file and see the result instantly when reloading the browser.
 
-Let's wrap `ConCache` in a custom `Cache` module so we can control when caching is on/off based on the environment.
+Let's wrap `ConCache` in a custom `Cache` module, so we can control when caching is on/off based on the environment.
 
 ```elixir
 defmodule Tuts.Cache do
@@ -195,6 +195,6 @@ Requests/sec:  13576.38
 Transfer/sec:  130.98MB
 ```
 
-That's a **huge** difference. The average response time went from 140ms to 5.2ms and we were able to respond to 204k total requests instead of 5k, which is about 13k req/sec.
+That's a **huge** difference. The average response time went from 140ms to 5.2ms, and we were able to respond to 204k total requests instead of 5k, which is about 13k req/sec.
 
 This caching strategy brings a performance boost with very little drawback. `ConCache` uses `ETS` internally, and `ETS` stores data in memory. Memory consumption is not an issue for me here because the amount of cached things is not gonna grow &mdash; it's at most one entry per tutorial and one entry for the list of tutorials.
