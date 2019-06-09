@@ -1,6 +1,6 @@
 # How to setup Elm in a Phoenix Project
 
-In this guide, we're gonna configure webpack to compile Elm (and TailwindCSS in the latter half) in a brand new Phoenix project. Phoenix switched to Webpack in version 1.4 making this task much easier.
+In this guide we're gonna configure webpack to compile Elm and TailwindCSS in a brand new Phoenix project. Phoenix switched to Webpack in version 1.4 making this task much easier.
 
 Let's create an empty project:
 
@@ -93,7 +93,7 @@ update msg model =
             model - 1
 ```
 
-We need to import the elm file from `js/app.js`, which is the entry point for webpack. The code below embeds the Elm application in an element with an id of "counter" — but the important bit is the `import` itself. If it works it means we're able to compile Elm code.
+We need to import this file from `js/app.js`, which is the entry point for webpack. The code below embeds the Elm application in an element with an id of "counter" — but the important bit is the `import` itself. If it works it means we're able to compile Elm code.
 
 ```js
 import "phoenix_html";

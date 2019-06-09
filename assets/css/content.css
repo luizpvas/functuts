@@ -42,6 +42,10 @@
     @apply .list-disc .ml-8 .my-4;
 }
 
+.content ol {
+    @apply .list-decimal .ml-8 .my-4;
+}
+
 .content ul li {
     @apply .mt-1;
 }

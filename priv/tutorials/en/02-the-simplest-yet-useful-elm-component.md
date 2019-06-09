@@ -1,6 +1,6 @@
 # The simplest yet useful Elm component
 
-I think it's fair to say Elm is difficult to learn, specially compared to most mainstream languages. It took me quite some time to learn and be productive with. How to deal with immutable data structures, how to _model_ our app with a strong type system and make our app _do_ things no side effects are some of the things we need to learn. Maybe you already know them well, maybe you're somewhat familiar with them, but maybe this is your first introduction to those concepts.
+I think it's fair to say Elm is difficult to learn, specially compared to most mainstream languages. It took me quite some time to understand and be productive with. How to deal with immutable data structures, how to model our app with a strong type system and make our app _do_ things with no side effects are some of the things we need to learn. Maybe you already know those things well, maybe you're somewhat familiar with them, but maybe this is your first introduction to those concepts.
 
 Instead of trying to explain them as separate topics, I'm gonna take a different route in this tutorial. We're gonna jump straight into building something without even thinking about those concepts and I'll do my best to explain the thought process behind each step.
 
@@ -17,10 +17,9 @@ The selected color should be highlighted somehow. **Let's get started**.
 
 ## Starting with data
 
-In Elm it's usual for people to start thinking about the shape
-of the data when facing a new problem, and the first thing about this component that comes to mind is the selected color &mdash; that's a **piece of data** that can change over time.
+It's a common practice to start thinking about the shape of the data when facing a new problem in Elm, and the first thing about this component that comes to mind is the selected color &mdash; that's a **piece of data** that can change over time.
 
-But before we go there we must decide _what_ is a color. We could go with three numbers between 0-255 representing RGB (e.g. 143, 50, 21) or a String representing the hexedecimal format (e.g. #8f3215). Let's go with a string for no particular reason and defined our Model with a selected color.
+But before we go there we must decide _what_ a color is. We could go with three numbers between 0-255 representing RGB (e.g. 143, 50, 21) or a String representing the hexedecimal format (e.g. #8f3215). Let's go with a string for no particular reason and defined our Model with a selected color.
 
 ```elm
 type alias Model =
@@ -118,7 +117,7 @@ Wow, that's a lot to take in. Let's break it apart:
 -   `{ record | field = newVal }` is the syntax for updating a record.
 -   The Elm runtime is responsible for calling this function, as you'll see in a minute.
 
-Oh, did I forgot to mention `case _variable_ of` expression is exaustive? It means that if we forgot to handle a value for `Msg` or if we typed a wrong value, the compiler would complain:
+Oh, did I forgot to mention `case _variable_ of` is exaustive? It means that if we forgot to handle a value for `Msg` or if we typed a wrong value, the compiler would complain:
 
 ![Example an error message for a missing](/images/examples/elm-forgot-branch-error-msg.png)
 
@@ -230,7 +229,7 @@ window.addEventListener("load", ev => {
 });
 ```
 
-The HTML page:
+And this is the code in our HTML page:
 
 ```html
 <h1 class="text-xl mb-4">Example app for the Color picker component</h1>
@@ -240,7 +239,7 @@ The HTML page:
 </div>
 ```
 
-This is what it looks like on the page:
+This is what it looks like in the browser:
 
 ![Color picker example on the page](/images/examples/colorpicker-example-01.png)
 
@@ -261,11 +260,11 @@ Looking at HTML code in Elm syntax might be weird at first. Here's an annotated 
 
 ![](/images/examples/colorpicker-view-annotated.png)
 
-This is what our output looks like:
+This is how it looks in the browser:
 
 ![](/images/examples/colorpicker-example-02.png)
 
-Let's render the colors from our static list of `colors` using `List.map`. `List.map` is a function that takes two arguments: a function and a list. The list is the colors we defined earlier, the function is `viewColor` that we defined to take a `String` and return `Html Msg`. I would read this as _mapping over a list of strings converting them to HTML_.
+Let's render the colors from our static list of `colors` using `List.map`. `List.map` is a function that takes two arguments: a function and a list. The list is the `colors` we defined earlier, the function is `viewColor` that we defined to take a `String` and return `Html Msg`. I would read this as _mapping over a list of strings converting them to HTML_.
 
 ```elm
 view : Model -> Html Msg
@@ -430,8 +429,10 @@ If we inspect our DOM tree we should see the hidden input in there:
 
 ![](/images/examples/colorpicker-hidden-input.png)
 
+And that's it! Our component is now fully functional. We can initialize it with a color and it syncs the selected color with a hidden input that will be submitted along with the form.
+
 Woosh, that was long, so treat yourself with a nice cup of coffee.
 
-## Challenges
+## Challenge
 
-* Our boss just called from a meeting. They loved our colorpicker and they want to use in another place - but there is one problem. The hidden input's name should be different there in order to match the database column name. How would you implement this change?
+* Our boss just called from a meeting. They loved our colorpicker and they want to use in another part of the software - but there is one problem. The hidden input's name should be different there in order to match the database column name. How would you implement this change?

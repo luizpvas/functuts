@@ -1,10 +1,10 @@
 # Caching in Elixir without Redis
 
-In this tutorial, we're gonna cache some stuff using the awesome library [con_cache](https://github.com/sasa1977/con_cache) by the awesome [Saša Jurić](https://twitter.com/sasajuric).
+In this tutorial, we're gonna cache some stuff using the awesome library [con_cache](https://github.com/sasa1977/con_cache) by [Saša Jurić](https://twitter.com/sasajuric).
 
 ## The use case
 
-Caching is an optimization &mdash; so we need a before-and-after picture to make sure we're actually improving things. I'm gonna use this website as the subject of this experiment. Currently, every time someone visits a tutorial, we perform two slow operations:
+Caching is an optimization, so we **need** a before-and-after picture to make sure we're actually improving things. I'm gonna use this website as the subject of this experiment. Currently, every time someone visits the page of a tutorial, we perform two slow operations:
 
 - Read the list of tutorials from disk to grab the titles to display in the menu.
 - Read the current tutorial based on the URL's path from disk and compile Markdown to HTML.
@@ -15,7 +15,7 @@ Our goal is to cache the result of those slow disk operations.
 
 ## Getting the before picture
 
-This site is not yet live as I'm writing this &mdash; I just registered functuts.com by the way &mdash; so all our tests are gonna run locally. That's fine because, in this case, improving the best case scenario also improves the overall performance of the server.
+This website is not yet live as I'm writing this &mdash; I just registered functuts.com by the way &mdash; so all our tests are gonna run locally. That's fine because, in this case, improving the best case scenario also improves the overall performance of the server.
 
 I'm gonna use [wrk](https://github.com/wg/wrk) to send a bunch of HTTP requests and get the average req/sec our server can handle.
 
@@ -34,9 +34,9 @@ It looks like we're about 304 req/sec.
 
 ## Thinking about how to cache
 
-Caching is knowingly hard so we should do our best to limit how things can go wrong. One of the best ways is ensuring a short life span, so if things go wrong we're gonna be out of sync for at most, let's say, 5 minutes.
+Caching is knowingly hard so we should do our best to limit how things can go wrong, and one of the best ways to do this is ensuring a short life span for the cache. If things go wrong we're gonna be out of sync for at most, let's say, 5 minutes.
 
-In some cases we can completely ignore manual expiration and let it be out of sync for 5 minutes. It's not the end of the world if I publish a new tutorial and it takes 5 minutes to appear on the menu. For this strategy to work, we're gonna need auto-expiration, and luckily for us, `con_cache` already implements it with a feature called TTL (time to live). Let's look at some code.
+In some cases we can even completely ignore manual expiration and let it be out of sync for 5 minutes. It's not the end of the world if I publish a new tutorial and it takes 5 minutes to appear on the menu. For this strategy to work, we're gonna need auto-expiration, and luckily for us, `con_cache` already implements it with a feature called TTL (time to live). Let's look at some code.
 
 ```elixir
 ConCache.get_or_store(:my_cache, "my-key", fn ->
@@ -124,7 +124,7 @@ Our cache is working!... but sadly it messes up the developemnt experience. Righ
 Let's wrap `ConCache` in a custom `Cache` module so we can control when caching is on/off based on the environment.
 
 ```elixir
-defmodule Functuts.Cache do
+defmodule Tuts.Cache do
   @moduledoc """
   Wrapper around `ConCache` that only enables caching in the `prod` environment.
   """
@@ -152,16 +152,16 @@ end
 Now let's use this module instead of `ConCache` in our functions.
 
 ```elixir
-# Replaced `ConCache.get_or_store` with our custom `Functuts.Cache.get_or_store` implementation
+# Replaced `ConCache.get_or_store` with our custom `Tuts.Cache.get_or_store` implementation
 def list_tutorials do
-  Functuts.Cache.get_or_store("tutorials-list", fn ->
+  Tuts.Cache.get_or_store("tutorials-list", fn ->
     list_tutorials_from_disk()
   end)
 end
 
-# Replaced `ConCache.get_or_store` with our custom `Functuts.Cache.get_or_store` implementation
+# Replaced `ConCache.get_or_store` with our custom `Tuts.Cache.get_or_store` implementation
 def render_tutorial_as_html(slug) do
-  Functuts.Cache.get_or_store("tutorial-#{slug}", fn ->
+  Tuts.Cache.get_or_store("tutorial-#{slug}", fn ->
     render_tutorial_as_html_from_disk(slug)
   end)
 end
@@ -169,7 +169,7 @@ end
 
 ## Taking the after picture
 
-We now have caching enabled only in production, so it's only fair we re-run our previous benchmark without caching in production mode &mdash; this is because Phoenix already performs some optimizations.
+We now have caching enabled only in production, so it's only fair we re-run our previous benchmark with no caching in production mode &mdash; this is because Phoenix already performs some optimizations.
 
 ```bash
 Running 15s test @ http://localhost:4000/tutorials/04-caching-in-elixir-without-redis.md
@@ -182,7 +182,7 @@ Requests/sec:    336.29
 Transfer/sec:    3.10MB
 ```
 
-A little bit more than before (about 500 more requests). Now let's run the benchmark with caching enabled.
+It looks like about 500 more requests than before, in `dev` mode. Now let's run the benchmark with caching enabled.
 
 ```bash
 Running 15s test @ http://localhost:4000/tutorials/04-caching-in-elixir-without-redis.md
@@ -195,6 +195,6 @@ Requests/sec:  13576.38
 Transfer/sec:  130.98MB
 ```
 
-That's a **huge** difference. The average response time went from 140ms to 5.2ms and we were able to respond to 204k total requests instead of 5k.
+That's a **huge** difference. The average response time went from 140ms to 5.2ms and we were able to respond to 204k total requests instead of 5k, which is about 13k req/sec.
 
-I see this implementation as a huge performance benefit with very little drawback. `ConCache` uses `ETS` internally, and `ETS` stores data in memory. Memory consumption is not an issue for me here because the amount of cached things is not gonna grow. It's at most one entry per tutorial and one entry for the list of tutorials.
+This caching strategy brings a performance boost with very little drawback. `ConCache` uses `ETS` internally, and `ETS` stores data in memory. Memory consumption is not an issue for me here because the amount of cached things is not gonna grow &mdash; it's at most one entry per tutorial and one entry for the list of tutorials.
