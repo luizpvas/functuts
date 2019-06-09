@@ -14,4 +14,12 @@ secret_key_base =
 
 config :tuts, TutsWeb.Endpoint,
   http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
+  force_ssl: [hsts: true],
+  https: [
+    port: 443,
+    opt_app: :tuts,
+    keyfile: "/etc/letsencrypt/live/functuts.com/privkey.pem",
+    cacertfile: "/etc/letsencrypt/live/functuts.com/chain.pem",
+    certfile: "/etc/letsencrypt/live/yourdomain.com/cert.pem"
+  ],
   secret_key_base: secret_key_base
