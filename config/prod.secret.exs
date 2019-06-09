@@ -14,7 +14,7 @@ secret_key_base =
 
 config :tuts, TutsWeb.Endpoint,
   http: [:inet6, port: 80],
-  force_ssl: [hsts: true],
+  # force_ssl: [hsts: true],
   https: [
     port: 443,
     opt_app: :tuts,
