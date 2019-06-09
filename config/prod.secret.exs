@@ -20,6 +20,6 @@ config :tuts, TutsWeb.Endpoint,
     opt_app: :tuts,
     keyfile: "/etc/letsencrypt/live/functuts.com/privkey.pem",
     cacertfile: "/etc/letsencrypt/live/functuts.com/chain.pem",
-    certfile: "/etc/letsencrypt/live/yourdomain.com/cert.pem"
+    certfile: "/etc/letsencrypt/live/functuts.com/cert.pem"
   ],
   secret_key_base: secret_key_base
