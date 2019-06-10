@@ -1,6 +1,6 @@
-# Rendering markdown in Elixir
+# Tips for rendering markdown in Elixir
 
-: just use [Earmark](https://github.com/pragdave/earmark) by [Dave Thomas](https://twitter.com/pragdave).
+tl;dr: just use [Earmark](https://github.com/pragdave/earmark) by [Dave Thomas](https://twitter.com/pragdave).
 
 ## Tips
 
