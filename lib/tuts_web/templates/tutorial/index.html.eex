@@ -1,17 +1,14 @@
 <div class="content p-4">
-  <h1>Welcome to functuts.com!</h1>
+  <h1>Welcome to FuncTuts.com!</h1>
 
-  I've been excited about functional programming for a while now. This year I was finally able to use <a href="https://elm-lang.org/">Elm</a> in my job &mdash; and it got me even more excited to share my experiences.
+  I've been excited about functional programming for a while now. This year I was finally able to get <a href="https://elm-lang.org/">Elm</a> code in production &mdash; and I got even more excited to share my experiences. Here are the goals of this website:
 
   <ul>
-    <li>Share my experiences about Elixir and Elm</li>
-    <li>Share my learning experience with folks</li>
-    <li>Practice and improve my english</li>
+    <li>Share my experiences about (mostly) Elixir and Elm</li>
+    <li>Practice writing 😊</li>
   </ul>
 
-  <a href="https://twitter.com/czaplic">Evan Czaplicki</a>, Elm's creator, said in a talk something along the lines of: if statically typed functional programming is so great, how come's nobody using it?
-
-  <div>
-    Well... I don't know the answer, and I do agree they're great.
-  </div>
 </div>
+
+
+<img src="<%= Routes.static_path(@conn, "/images/arrow-pointing-to-menu.svg") %>" class="hidden md:block">
