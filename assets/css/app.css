@@ -13,6 +13,16 @@
 }
 
 .main {
+  margin-top: 20px;
+}
+
+.tilted-right {
+  transform: rotate(1deg);
+}
+
+
+.tilted-left {
+  transform: rotate(-1deg);
 }
 
 @screen md {
@@ -22,6 +32,7 @@
   }
   
   .main {
+    margin-top: 0;
     margin-left: 240px;
     max-width: 740px;
   }

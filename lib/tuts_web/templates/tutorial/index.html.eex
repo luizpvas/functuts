@@ -1,14 +1,29 @@
-<div class="content p-4">
-  <h1>Welcome to FuncTuts.com!</h1>
-
-  I've been excited about functional programming for a while now. This year I was finally able to get <a href="https://elm-lang.org/">Elm</a> code in production &mdash; and I got even more excited to share my experiences. Here are the goals of this website:
-
-  <ul>
-    <li>Share my experiences about (mostly) Elixir and Elm</li>
-    <li>Practice writing 😊</li>
-  </ul>
-
+<div class="flex justify-center">
+  <%= img_tag Routes.static_path(@conn, "/images/logo2.svg"), class: "w-32 block md:hidden" %>
+  <div class="hidden md:block mt-8 mb-4 relative">
+    <h1 class="text-xl text-center text-blue-100 font-bold bg-blue-500 px-3 tilted-left">
+      Welcome to <span class="text-white">FuncTuts</span>
+    </h1>
+  </div>
 </div>
 
+<div class="content px-4 pt-4">
+  I've been excited about functional programming for a while now, specifically Elixir and Elm. This year I was finally able to get my first <a href="https://elm-lang.org/">Elm</a> code in production at <a href="http://aloweb.com.br">Aloweb</a> &mdash; and this got me even more excited to share my experience with those languages. Here are my goals with this website:
 
-<img src="<%= Routes.static_path(@conn, "/images/arrow-pointing-to-menu.svg") %>" class="hidden md:block">
+  <ul>
+    <li>Share my experiences with Elixir and Elm</li>
+    <li>Practice writing in english 😊</li>
+  </ul>
+
+  If you want to talk about software development in general, <a href="https://twitter.com/luizpvasc">say hi on Twitter</a>.
+</div>
+
+<div class="block md:hidden mt-6">
+  <div class="font-bold text-center text-indigo-500 mb-2">Here's a list of the latest tutorials:</div>
+  <%= for tutorial <- @tutorials do %>
+    <a href="<%= Routes.tutorial_path(@conn, :show, tutorial[:slug]) %>" class="block bg-white border-t p-2">
+      <%= tutorial[:title] %>
+    </a>
+  <% end %>
+  <div class="border-t"></div>
+</div>

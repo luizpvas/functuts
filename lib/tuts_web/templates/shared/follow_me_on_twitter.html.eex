@@ -1,0 +1,11 @@
+<div class="p-4 flex justify-center">
+  <div class="flex items-center">
+    <img src="<%= Routes.static_path(@conn, "/images/profile-pic.jpg") %>"
+         class="w-10 h-10 mr-3 rounded-full"
+    >
+    <div class="text-sm">
+      <div>Hi, I'm Luiz.
+      <a class="underline" href="https://twitter.com/luizpvasc">Follow me</a> on Twitter for updates.</div>
+    </div>
+  </div>
+</div>
