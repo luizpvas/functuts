@@ -13,8 +13,9 @@ defmodule TutsWeb.TutorialControllerTest do
 
   describe "GET /tutorials/:slug" do
     test "renders the tutorial", %{conn: conn} do
-      slug = "01-how-to-setup-elm-in-a-phoenix-project.md"
-      {:ok, html} = Tuts.Tutorial.render_tutorial_as_html(slug)
+      slug = "how-to-set-up-elm-in-a-phoenix-project"
+      {:ok, tutorial} = Tuts.Tutorial.find_tutorial_by_slug(slug)
+      {:ok, html} = Tuts.Tutorial.render_tutorial_as_html(tutorial)
       conn = get(conn, Routes.tutorial_path(conn, :show, slug))
       assert html_response(conn, 200) =~ html
     end

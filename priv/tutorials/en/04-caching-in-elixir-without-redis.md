@@ -1,3 +1,6 @@
+Caching in Elixir without Redis
+In this tutorial we're gonna implement a simple caching layer in our Phoenix app with the con_cache library and no external dependencies.
+
 # Caching in Elixir without Redis
 
 In this tutorial, we're gonna cache some stuff using the awesome library [con_cache](https://github.com/sasa1977/con_cache) by [Saša Jurić](https://twitter.com/sasajuric).

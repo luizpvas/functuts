@@ -1,11 +1,15 @@
 <div class="flex justify-center">
   <%= img_tag Routes.static_path(@conn, "/images/logo2.svg"), class: "w-32 block md:hidden" %>
-  <div class="hidden md:block mt-8 mb-4 relative">
-    <h1 class="text-xl text-center text-blue-100 font-bold bg-blue-500 px-3 tilted-left">
-      Welcome to <span class="text-white">FuncTuts</span>
+  
+  <div class="mt-8 mb-2 hidden md:block text-center">
+    <%= img_tag Routes.static_path(@conn, "/images/welcome.svg"), class: "w-64 mb-3" %>
+
+    <h1 class="text-lg font-bold px-3 text-gray-800">
+      Welcome to <span class="text-blue-500">FuncTuts</span>
     </h1>
   </div>
 </div>
+
 
 <div class="content px-4 pt-4">
   I've been excited about functional programming for a while now, specifically Elixir and Elm. This year I was finally able to get my first <a href="https://elm-lang.org/">Elm</a> code in production at <a href="http://aloweb.com.br">Aloweb</a> &mdash; and this got me even more excited to share my experience with those languages. Here are my goals with this website:

@@ -20,9 +20,18 @@ defmodule TutsWeb.TutorialController do
   def show(conn, params) do
     %{"slug" => slug} = params
 
-    with {:ok, html}  <- Tuts.Tutorial.render_tutorial_as_html(slug) do
+    with {:ok, tutorial} <- Tuts.Tutorial.find_tutorial_by_slug(slug),
+         {:ok, html}     <- {:ok, html} = Tuts.Tutorial.render_tutorial_as_html(tutorial)
+    do
       tutorials = Tuts.Tutorial.list_tutorials()
-      render(conn, "show.html", tutorial_html: html, tutorials: tutorials)
+      render(
+        conn,
+        "show.html",
+        tutorial_html: html,
+        tutorials: tutorials,
+        title: tutorial[:title],
+        description: tutorial[:description]
+      )
     end
   end
 end

@@ -1,8 +1,9 @@
+Tips for rendering markdown in Elixir
+In this tutorial I share some tips for rendering Markdown in Elixir using the Earmark library.
+
 # Tips for rendering markdown in Elixir
 
 tl;dr: just use [Earmark](https://github.com/pragdave/earmark) by [Dave Thomas](https://twitter.com/pragdave).
-
-## Tips
 
 1. If you're using [prism](https://prismjs.com/) for syntax highlighting, you can pass a second argument with the class prefix for code blocks:
 

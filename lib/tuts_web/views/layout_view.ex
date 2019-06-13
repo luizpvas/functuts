@@ -4,9 +4,9 @@ defmodule TutsWeb.LayoutView do
   def menu_link(conn, title, url) do
     class =
       if conn.request_path == url do
-        "text-sm block m-2 p-1 bg-teal-100 text-teal-900 rounded"
+        "text-sm block my-1 mx-2 p-1 bg-teal-100 text-teal-900 rounded"
       else
-        "text-sm block m-2 p-1 text-gray-800"
+        "text-sm block my-1 mx-2 p-1 text-gray-800"
       end
 
 
