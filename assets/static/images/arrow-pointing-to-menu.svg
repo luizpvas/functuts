@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="48.314194mm"
-   height="31.727325mm"
-   viewBox="0 0 48.314193 31.727326"
+   width="113.01987mm"
+   height="82.413971mm"
+   viewBox="0 0 113.01987 82.413971"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (unknown)"
@@ -25,21 +25,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="27.313428"
-     inkscape:cy="73.744418"
+     inkscape:zoom="0.7"
+     inkscape:cx="43.727434"
+     inkscape:cy="120.48939"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
      inkscape:window-width="1440"
      inkscape:window-height="742"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -56,28 +56,28 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-69.425911,-60.512506)">
+     transform="translate(-59.354817,-84.956753)">
     <path
-       style="fill:#ffcc00;fill-opacity:1;stroke-width:0.26458335"
-       d="m 85.65482,86.284637 c 2.288794,2.040032 4.132957,3.299333 4.454339,3.041687 0.102539,-0.0822 0.134447,-0.718178 0.0709,-1.413279 -0.06355,-0.695105 -0.05304,-1.313933 0.02336,-1.375177 0.0764,-0.06125 0.65112,-0.128033 1.277166,-0.148427 1.950751,-0.06353 5.6258,-0.95731 7.58397,-1.844433 2.600665,-1.178201 6.039865,-3.949527 7.789605,-6.276848 1.40562,-1.869667 2.7351,-4.389963 3.01111,-5.708163 0.15359,-0.734343 0.0973,-0.864654 -0.50633,-1.169395 -0.37365,-0.188635 -0.79924,-0.246874 -0.94574,-0.129422 -0.1465,0.117447 -0.70258,1.165936 -1.2357,2.329984 -0.53313,1.164046 -1.48711,2.768127 -2.11993,3.564631 -1.46325,1.841694 -4.73698,4.464959 -6.794346,5.444357 -1.779145,0.846957 -5.085264,1.674097 -6.639055,1.660975 l -1.020626,-0.0086 0.595088,-1.254987 c 0.555666,-1.171873 0.553944,-1.261607 -0.02608,-1.354895 -1.075208,-0.172931 -7.836476,1.990956 -7.754053,2.481615 0.01814,0.108103 1.024509,1.080291 2.236328,2.160402 z"
+       style="fill:#ffcc00;stroke-width:0.26458335"
+       d="m 69.609044,166.80284 c -2.12312,-0.84144 -9.68723,-5.61355 -10.246176,-6.4642 -0.183623,-0.27945 2.797105,-1.99624 6.556597,-3.77637 2.717221,-1.28661 4.152274,-1.79717 5.737203,-2.04118 l 0.71396,-0.10992 -0.601163,1.9705 c -0.330641,1.08377 -0.701744,2.16246 -0.824677,2.39707 -0.198479,0.37879 0.0041,0.3955 1.808823,0.14921 11.059274,-1.50924 21.155025,-7.2673 27.958339,-15.94588 0.98444,-1.2558 2.2191,-2.98293 2.74367,-3.83806 1.30657,-2.12993 1.55122,-2.2751 2.73754,-1.62445 1.49885,0.82206 1.52633,1.08667 0.32362,3.11594 -1.60288,2.70446 -5.58632,7.54132 -8.126675,9.86775 -2.801359,2.56546 -8.649528,6.42728 -12.05088,7.95778 -4.410511,1.98458 -10.900143,3.73386 -14.559336,3.92448 l -1.15239,0.06 0.480034,2.17697 c 0.437512,1.98411 0.39672,2.91725 -0.119043,2.72312 -0.10762,-0.0405 -0.728368,-0.28476 -1.379446,-0.5428 z"
        id="path826"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.86018968px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09650474"
-       x="59.022728"
-       y="86.658127"
-       id="text818"
-       transform="rotate(-9.9291819)"><tspan
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="26.242861"
+       y="143.2269"
+       id="text830"
+       transform="rotate(-18.911897)"><tspan
          sodipodi:role="line"
-         id="tspan816"
-         x="59.022728"
-         y="86.658127"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.09650474">choose a tutorial</tspan><tspan
+         id="tspan828"
+         x="26.242861"
+         y="143.2269"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.26458332">choose a tutorial</tspan><tspan
          sodipodi:role="line"
-         x="59.022728"
-         y="91.558258"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.09650474"
-         id="tspan820">from the menu</tspan></text>
+         x="26.242861"
+         y="156.66139"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.26458332"
+         id="tspan832">to get started</tspan></text>
   </g>
 </svg>

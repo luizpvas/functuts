@@ -434,7 +434,7 @@ If we inspect our DOM tree we should see the hidden input in there:
 
 And that's it! Our component is now fully functional. We can initialize it with a color and it syncs the selected color with a hidden input that will be submitted along with the form.
 
-Woosh, that was long, so treat yourself with a nice cup of coffee.
+Woosh, that was long, but we made it! Oh, and I almost forgot, [here's a gist](https://gist.github.com/luizpvas/197c4570b400e9cfe1fdd8dc79c1e1fa) with the source code.
 
 ## Challenge
 

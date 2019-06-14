@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://functuts.com</loc>
-    <lastmod>2019-06-13</lastmod>
+    <lastmod>2019-06-14</lastmod>
   </url>
   <%= for tutorial <- @tutorials do %>
   <url>

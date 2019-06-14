@@ -1,8 +1,11 @@
 <div class="flex justify-center">
   <%= img_tag Routes.static_path(@conn, "/images/logo2.svg"), class: "w-32 block md:hidden" %>
   
-  <div class="mt-8 mb-2 hidden md:block text-center">
-    <%= img_tag Routes.static_path(@conn, "/images/welcome.svg"), class: "w-64 mb-3" %>
+  <div class="mt-8 mb-2 hidden md:block w-full text-center relative">
+    <%= img_tag Routes.static_path(@conn, "/images/arrow-pointing-to-menu.svg"),
+          class: "absolute top-0 left-0 -ml-2 w-32" %>
+
+    <%= img_tag Routes.static_path(@conn, "/images/welcome.svg"), class: "inline w-64 mb-3" %>
 
     <h1 class="text-lg font-bold px-3 text-gray-800">
       Welcome to <span class="text-blue-500">FuncTuts</span>
@@ -12,14 +15,15 @@
 
 
 <div class="content px-4 pt-4">
-  I've been excited about functional programming for a while now, specifically Elixir and Elm. This year I was finally able to get my first <a href="https://elm-lang.org/">Elm</a> code in production at <a href="http://aloweb.com.br">Aloweb</a> &mdash; and this got me even more excited to share my experience with those languages. Here are my goals with this website:
+  I've been interested in functional programming for a while now, in particular Elixir and Elm. This year I was finally able to get my first Elm code in production at <a href="http://aloweb.com.br">Aloweb</a> &mdash; and this got me even more excited to share my experience with those languages.
+  
+  <p>
+    I have no particular goal with this website, I just want to talk about software development 😁.
+  </p>
+</div>
 
-  <ul>
-    <li>Share my experiences with Elixir and Elm</li>
-    <li>Practice writing in english 😊</li>
-  </ul>
-
-  If you want to talk about software development in general, <a href="https://twitter.com/luizpvasc">say hi on Twitter</a>.
+<div class="m-3 bg-white border p-3 text-sm">
+  This website's source code is available <a href="https://github.com/luizpvas/functuts" class="text-blue-600 underline">here</a>. It currently runs on the smallest Digital Ocean droplet with no additional services, not even Nginx.
 </div>
 
 <div class="block md:hidden mt-6">

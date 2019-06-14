@@ -29,7 +29,7 @@ defmodule TutsWeb.TutorialController do
         "show.html",
         tutorial_html: html,
         tutorials: tutorials,
-        title: tutorial[:title],
+        title: "#{tutorial[:title]} | FuncTuts",
         description: tutorial[:description]
       )
     end
