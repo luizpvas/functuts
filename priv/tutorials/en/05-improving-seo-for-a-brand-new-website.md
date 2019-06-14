@@ -41,7 +41,7 @@ In the Search Console menu, I saw **Sitemaps**, which is the next thing I did.
 
 ## Generating a sitemap
 
-It seems a sitemap is the best way to tell Google about the pages I want to be indexed. I found a couple of tools online to generate one, but I would have to update it every time I published a new tutorial &mdash; so I built a [one](https://functuts.com/sitemap). It reads the current list of tutorials dynamically so it is always up to date.
+It seems sitemaps are the best way to tell Google about the pages we want to index. I found a couple of tools online to generate one, but I would have to update it every time I published a new tutorial &mdash; so I built [one](https://functuts.com/sitemap). It reads the current list of tutorials dynamically so it is always up to date.
 
 The [Sitemap's XML body](https://github.com/luizpvas/functuts/blob/master/lib/tuts_web/templates/sitemap/index.xml.eex) looks something like this:
 
