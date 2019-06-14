@@ -6,7 +6,7 @@
   </url>
   <%= for tutorial <- @tutorials do %>
   <url>
-    <loc><%= Routes.tutorial_url(@conn, :show, tutorial[:slug]) %></loc>
+    <loc><%= "https://functuts.com" <> Routes.tutorial_path(@conn, :show, tutorial[:slug]) %></loc>
     <lastmod><%= tutorial[:last_modified] %></lastmod>
   </url>
   <% end %>
