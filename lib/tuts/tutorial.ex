@@ -24,7 +24,8 @@ defmodule Tuts.Tutorial do
           path: path,
           slug: path_to_slug(path),
           title: tutorial_title(path),
-          description: tutorial_description(path)
+          description: tutorial_description(path),
+          last_modified: tutorial_last_modified(path)
         }
       end)
     end
@@ -86,14 +87,6 @@ defmodule Tuts.Tutorial do
     end
   end
 
-  # Converts a slug to a file path by searching the tutorials array for the given slug.
-  defp slug_to_path(slug) do
-    case find_tutorial_by_slug(slug) do
-      nil -> nil
-      tutorial -> tutorial[:path]
-    end
-  end
-
   # Reads the file from disk and extracts the content of the first line.
   defp tutorial_title(path) do
     File.read!(root_dir() <> "/" <> path)
@@ -107,6 +100,13 @@ defmodule Tuts.Tutorial do
     |> String.split("\n")
     |> Enum.at(1)
     |> String.trim()
+  end
+
+  defp tutorial_last_modified(path) do
+    %{mtime: {{year, month, day}, _}} = File.stat!(root_dir() <> "/" <> path)
+    month = month |> Integer.to_string() |> String.pad_leading(2, "0")
+    day = day |> Integer.to_string() |> String.pad_leading(2, "0")
+    "#{year}-#{month}-#{day}"
   end
 
   # Directory with all markdown files.

@@ -1,7 +1,7 @@
-Improving SEO for a new website
+Improving SEO for a brand new website
 My personal journey to learn about SEO and attempt to improve this website's ranking on Google. Come along for the ride. 
 
-# Improving SEO for a new website
+# Improving SEO for a brand new website
 
 I just released this website, and at this moment Google is not aware it exists yet.
 

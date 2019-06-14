@@ -12,7 +12,7 @@ defmodule Tuts.TutorialTest do
   end
 
   test "render_tutorial_as_html/1 - renders HTML without .md extension and index number" do
-    {:ok, tutorial} = Tuts.Tutorial.find_tutorial_by_slug("first-steps-with-seo")
+    {:ok, tutorial} = Tuts.Tutorial.find_tutorial_by_slug("improving-seo-for-a-brand-new-website")
     assert {:ok, html} = Tuts.Tutorial.render_tutorial_as_html(tutorial)
   end
 end
