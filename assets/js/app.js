@@ -7,23 +7,24 @@ window.addEventListener("load", ev => {
     document.querySelectorAll('[data-target="menu-link"]')
   );
 
-  search.addEventListener("keyup", ev => {
-    applySearch();
-  });
+  search.addEventListener("keyup", runSearch);
 
-  function applySearch() {
+  function runSearch() {
     if (search.value.length === 0) {
       links.map(link => {
         link.style.display = "block";
       });
+
       return;
     }
 
     links.map(link => {
-      if (
-        link.textContent.toLowerCase().indexOf(search.value.toLowerCase()) ===
-        -1
-      ) {
+      let containsText =
+        link.textContent
+          .toLocaleLowerCase()
+          .indexOf(search.value.toLowerCase()) === -1;
+
+      if (containsText) {
         link.style.display = "none";
       } else {
         link.style.display = "block";
@@ -33,21 +34,20 @@ window.addEventListener("load", ev => {
 
   initMobile();
 });
-
 function initMobile() {
-  let open = document.querySelector('#mobile-open-menu');
-  let close = document.querySelector('#mobile-close-menu');
-  let menu = document.querySelector('.menu')
+  let open = document.querySelector("#mobile-open-menu");
+  let close = document.querySelector("#mobile-close-menu");
+  let menu = document.querySelector(".menu");
 
-  open.addEventListener('click', ev => {
-    menu.style.display = 'block'
-    close.style.display = 'block';
-    open.style.display = 'none';
-  })
+  open.addEventListener("click", ev => {
+    menu.style.display = "block";
+    close.style.display = "block";
+    open.style.display = "none";
+  });
 
-  close.addEventListener('click', ev => {
-    menu.style.display = 'none'
-    close.style.display = 'none';
-    open.style.display = 'block';
-  })
+  close.addEventListener("click", ev => {
+    menu.style.display = "none";
+    close.style.display = "none";
+    open.style.display = "block";
+  });
 }

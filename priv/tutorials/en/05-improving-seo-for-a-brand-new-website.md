@@ -7,7 +7,7 @@ I released this website three days ago, and as I'm writing this sentence Google 
 
 ![Functuts.com doest not appear on google](/images/examples/seo-not-on-google.png)
 
-I know **nothing** about SEO, so this is gonna be interesting. I'm gonna document all changes I make to this website as I learn about SEO. My goals here are:
+I know **nothing** about SEO, so this is gonna be interesting. My goal here is to describe all changes I make as I learn about SEO, and at the end, hopefully:
 
 * Make this website appear as the first result when people search for "functuts"
 * Make one tutorial appear on the first page when people search for the exact title.
@@ -29,7 +29,7 @@ I'm not sure if this hurts SE ranking somehow, but why not remove them since we'
 
 There is only one `<title>` tag for the whole website, and it reads **FuncTuts.com**. It seems it's better to add a sentence, something like **FuncTuts - Tutorials about Elixir and Elm**.
 
-I also changed the `<title>` for the tutorials so it has the same value as the tutorial's title.
+I also changed the tutorial's page to have the same value as the tutorial's title.
 
 ## Creating an account on Google Search Console
 
@@ -41,7 +41,7 @@ In the Search Console menu, I saw **Sitemaps**, which is the next thing I did.
 
 ## Generating a sitemap
 
-It seems sitemaps are the best way to tell Google about the pages we want to index. I found a couple of tools online to generate one, but I would have to update it every time I published a new tutorial &mdash; so I built [one](https://functuts.com/sitemap). It reads the current list of tutorials dynamically so it is always up to date.
+It seems sitemaps are the best way to tell Google about the pages we want to index. I found a couple of tools online to generate one, but I would have to manually update it every time I published a new tutoria. So I built [one](https://functuts.com/sitemap) that reads the current list of tutorials dynamically so it is always up to date.
 
 The [Sitemap's XML body](https://github.com/luizpvas/functuts/blob/master/lib/tuts_web/templates/sitemap/index.xml.eex) looks something like this:
 

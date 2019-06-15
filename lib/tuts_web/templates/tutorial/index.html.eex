@@ -16,11 +16,12 @@
 
 
 <div class="content px-4 pt-4">
-  I've been interested in functional programming for a while now.
-  I have played with a lot of languages, but I really enjoyed Elixir and Elm's community. They both have great documentation, great forums and great talks on Youtube. This year I was finally able to get my first Elm code in production at <a href="http://aloweb.com.br">Aloweb</a>, and this got me even more excited to share my experience with those languages.
+  <p>I've been interested in <strong>functional programming</strong> for a while now.</p>
+
+  <p>I have played with a lot of languages (Clojure, Haskell, F# and OCaml), but I really enjoyed <strong>Elixir</strong> and <strong>Elm</strong>'s community. They both have great documentation, great forums and great talks on Youtube. This year I was finally able to get my first Elm code in production at <a href="http://aloweb.com.br">Aloweb</a>, and this got me even more excited to share my experience with those languages.</p>
   
   <p class="italic">
-    I have no particular goal with this website, I just want to talk about software development with functional languages 😁.
+    I have no particular goal with this website, I just want to talk about software development 😁.
   </p>
 </div>
 

@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="100.5437"
-     inkscape:cy="5.8829078"
+     inkscape:cx="90.902647"
+     inkscape:cy="17.480813"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -75,7 +75,10 @@
        transform="matrix(0.26458333,0,0,0.26458333,26.774606,112.79421)"
        id="path1135"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccscsssssssscccccccsccccsssscccc" />
+       sodipodi:nodetypes="ccscsssssssscccccccsccccsssscccc"
+       inkscape:export-filename="/home/luiz/Desktop/functutsicon.png"
+       inkscape:export-xdpi="816.77661"
+       inkscape:export-ydpi="816.77661" />
     <g
        id="g1014"
        transform="translate(0.13363476,-0.13363476)" />
@@ -86,7 +89,10 @@
        height="2.3838394"
        x="-64.826996"
        y="101.13239"
-       transform="rotate(-50.12602)" />
+       transform="rotate(-50.12602)"
+       inkscape:export-filename="/home/luiz/Desktop/functutsicon.png"
+       inkscape:export-xdpi="816.77661"
+       inkscape:export-ydpi="816.77661" />
     <rect
        transform="rotate(-53.733838)"
        y="96.973831"
@@ -94,6 +100,9 @@
        height="1.9274061"
        width="0.60575622"
        id="rect1018"
-       style="fill:#76bfd3;fill-opacity:1;stroke:none;stroke-width:0.17444886" />
+       style="fill:#76bfd3;fill-opacity:1;stroke:none;stroke-width:0.17444886"
+       inkscape:export-filename="/home/luiz/Desktop/functutsicon.png"
+       inkscape:export-xdpi="816.77661"
+       inkscape:export-ydpi="816.77661" />
   </g>
 </svg>
