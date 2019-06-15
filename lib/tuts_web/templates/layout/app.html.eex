@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title><%= @conn.assigns[:title] || "FuncTuts - Tutorials about Elixir and Elm" %></title>
+    <title><%= @conn.assigns[:title] || "FuncTuts | Tutorials about Elixir and Elm" %></title>
     <meta name="description" content="<%= @conn.assigns[:description] || "Tutorials about Elixir and Elm from the perspective of someone who's also learning those languages." %>">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
@@ -36,8 +36,10 @@
         <%= menu_link @conn, tutorial[:title], Routes.tutorial_path(@conn, :show, tutorial[:slug]) %>
       <% end %>
 
-      <div class="border-t text-sm p-2 text-gray-700">
-        Hi, I'm Luiz. <a href="https://twitter.com/luizpvasc" class="underline">Follow me</a>  on Twitter for updates whenever there's a new tutorial.
+      <div class="border-t text-sm p-4 text-gray-700">
+        Hi, I'm Luiz.
+        <a href="https://twitter.com/luizpvasc" class="underline">Follow me</a>
+        on Twitter for updates whenever there's a new tutorial.
       </div>
     </div>
 

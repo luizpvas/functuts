@@ -7,7 +7,7 @@ I released this website three days ago, and as I'm writing this sentence Google 
 
 ![Functuts.com doest not appear on google](/images/examples/seo-not-on-google.png)
 
-I know **nothing** about SEO, so this is gonna be interesting. My goals here are:
+I know **nothing** about SEO, so this is gonna be interesting. I'm gonna document all changes I make to this website as I learn about SEO. My goals here are:
 
 * Make this website appear as the first result when people search for "functuts"
 * Make one tutorial appear on the first page when people search for the exact title.

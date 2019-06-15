@@ -3,7 +3,8 @@
   
   <div class="mt-8 mb-2 hidden md:block w-full text-center relative">
     <%= img_tag Routes.static_path(@conn, "/images/arrow-pointing-to-menu.svg"),
-          class: "absolute top-0 left-0 -ml-2 w-32" %>
+          class: "absolute top-0 left-0 -ml-2 w-32",
+          alt: "Choose a tutorial to get started" %>
 
     <%= img_tag Routes.static_path(@conn, "/images/welcome.svg"), class: "inline w-64 mb-3" %>
 
@@ -15,15 +16,22 @@
 
 
 <div class="content px-4 pt-4">
-  I've been interested in functional programming for a while now, in particular Elixir and Elm. This year I was finally able to get my first Elm code in production at <a href="http://aloweb.com.br">Aloweb</a> &mdash; and this got me even more excited to share my experience with those languages.
+  I've been interested in functional programming for a while now.
+  I have played with a lot of languages, but I really enjoyed Elixir and Elm's community. They both have great documentation, great forums and great talks on Youtube. This year I was finally able to get my first Elm code in production at <a href="http://aloweb.com.br">Aloweb</a>, and this got me even more excited to share my experience with those languages.
   
-  <p>
-    I have no particular goal with this website, I just want to talk about software development 😁.
+  <p class="italic">
+    I have no particular goal with this website, I just want to talk about software development with functional languages 😁.
   </p>
 </div>
 
-<div class="m-3 bg-white border p-3 text-sm">
-  This website's source code is available <a href="https://github.com/luizpvas/functuts" class="text-blue-600 underline">here</a>. It currently runs on the smallest Digital Ocean droplet with no additional services, not even Nginx.
+<div class="m-3 bg-white border-2 p-3 text-sm">
+  <p>
+    This website's source code is available <a href="https://github.com/luizpvas/functuts" class="text-blue-600 underline">here</a>.
+  </p>
+  
+  <p>
+    It currently runs on the smallest Digital Ocean droplet with no additional services, not even Nginx.
+  </p>
 </div>
 
 <div class="block md:hidden mt-6">

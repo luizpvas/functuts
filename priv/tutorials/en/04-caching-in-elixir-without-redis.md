@@ -7,7 +7,7 @@ In this tutorial, we're gonna cache some stuff using the awesome library [con_ca
 
 ## The use case
 
-Caching is an optimization, so we **need** a before-and-after picture to make sure we're actually improving things. I'm gonna use this website as the subject of this experiment. Currently, every time someone visits the page of a tutorial, we perform two slow operations:
+Caching is an optimization, so we **need** a before-and-after picture to make sure we're actually improving things. I'm gonna use this website as the subject of this experiment. Currently, every time someone visits a tutorial, the server performs two slow operations:
 
 - Read the list of tutorials from disk to grab the titles to display in the menu.
 - Read the current tutorial based on the URL's path from disk and compile Markdown to HTML.
@@ -39,7 +39,7 @@ It looks like we're about 304 req/sec.
 
 Caching is knowingly hard, so we should do our best to limit how things can go wrong, and one of the best ways to do this is ensuring a short life span for the cache. If things go wrong we're gonna be out of sync for at most, let's say, 5 minutes.
 
-In some cases we can even completely ignore manual expiration and let it be out of sync for 5 minutes. It's not the end of the world if I publish a new tutorial and it takes 5 minutes to appear on the menu. For this strategy to work, we're gonna need auto-expiration, and luckily for us, `con_cache` already implements it with a feature called TTL (time to live). Let's look at some code.
+In some cases we can completely ignore manual expiration and let it be out of sync for 5 minutes. It's not the end of the world if I publish a new tutorial and it takes 5 minutes to appear on the menu. For this strategy to work, we're gonna need auto-expiration, and luckily for us, `con_cache` already implements it with a feature called TTL (time to live). Let's look at some code.
 
 ```elixir
 ConCache.get_or_store(:my_cache, "my-key", fn ->
