@@ -4,19 +4,19 @@ defmodule Tuts.Cache do
   """
 
   def get_or_store(key, callback) do
-    run_get_or_store(Mix.env, key, callback)
+    get_or_store_by_env(Mix.env, key, callback)
   end
 
-  defp run_get_or_store(:dev, key, callback) do
+  defp get_or_store_by_env(:dev, key, callback) do
     callback.()
   end
 
-  defp run_get_or_store(:test, key, callback) do
+  defp get_or_store_by_env(:test, key, callback) do
     callback.()
   end
 
 
-  defp run_get_or_store(:prod, key, callback) do
+  defp get_or_store_by_env(:prod, key, callback) do
     ConCache.get_or_store(:cache, key, fn ->
       callback.()
     end)

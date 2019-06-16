@@ -7,7 +7,6 @@
 @import "prism.css";
 @import "content.css";
 
-
 .menu {
   @apply .hidden .fixed .bg-white .shadow-lg .w-full .top-0 .left-0;
 }
@@ -20,9 +19,8 @@
   transform: rotate(1deg);
 }
 
-
 .tilted-left {
-  transform: rotate(-1deg);
+  transform: rotate(-2deg);
 }
 
 @screen md {
@@ -30,7 +28,7 @@
     @apply .block .fixed .h-screen .bg-white .border-r .shadow-none;
     width: 240px;
   }
-  
+
   .main {
     margin-top: 0;
     margin-left: 240px;

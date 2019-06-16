@@ -58,27 +58,95 @@ function initMobile() {
 
 function initSplitBySection() {
   let splitButton = document.querySelector("#split-by-sections");
+  let backToFullTextButton = document.querySelector("#back-to-full-text");
+  let splitContainer = document.querySelector("#split-container");
   let tutorial = document.querySelector("#tutorial");
+  let controls = document.querySelector("#sections-controls");
+  let back = document.querySelector("#sections-back");
+  let tracking = document.querySelector("#sections-tracking");
+  let next = document.querySelector("#sections-next");
+
+  let currentSection = 0;
+  let sections = [];
+  let originalChildNodes = Array.from(tutorial.childNodes);
 
   if (splitButton) {
-    splitButton.addEventListener("click", ev => {
-      let sections = [];
-      let currentSection = 0;
+    backToFullTextButton.addEventListener("click", ev => {
+      currentSection = 0;
+      hideControls();
+      splitContainer.style.display = "flex";
 
-      Array.from(tutorial.childNodes).map(node => {
-        if (currentSection == 0 && node.nodeType == Node.TEXT_NODE) {
+      tutorial.innerHTML = "";
+      originalChildNodes.map(node => {
+        tutorial.appendChild(node);
+      });
+
+      window.scrollTo(0, 0);
+    });
+
+    splitButton.addEventListener("click", ev => {
+      splitContainer.style.display = "none";
+      sections = [];
+      let index = 0;
+
+      originalChildNodes.map(node => {
+        if (index == 0 && node.nodeType == Node.TEXT_NODE) {
           return;
         }
 
         if (node.tagName == "H1" || node.tagName == "H2") {
-          sections[currentSection] = [node];
-          currentSection += 1;
+          index += 1;
+          sections[index] = [node];
         } else {
-          sections[currentSection].push(node);
+          sections[index].push(node);
         }
       });
 
-      console.log(sections);
+      sections = sections
+        .filter(section => {
+          return section.length > 0;
+        })
+        .map(section => {
+          let container = document.createElement("div");
+          container.className = "tutorial-section";
+          section.map(node => container.appendChild(node));
+          return container;
+        });
+
+      showControls();
+      updateSection();
     });
+
+    back.addEventListener("click", goToBack);
+    next.addEventListener("click", goToNext);
+  }
+
+  function showControls() {
+    controls.style.display = "block";
+  }
+
+  function hideControls() {
+    controls.style.display = "none";
+  }
+
+  function goToNext() {
+    currentSection = Math.min(sections.length - 1, currentSection + 1);
+    updateSection();
+  }
+
+  function goToBack() {
+    currentSection = Math.max(0, currentSection - 1);
+    updateSection();
+  }
+
+  function updateSection() {
+    tutorial.innerHTML = "";
+    tutorial.appendChild(sections[currentSection]);
+    updateTracking();
+    window.scrollTo(0, 0);
+  }
+
+  function updateTracking() {
+    tracking.innerHTML = currentSection + 1 + " / " + sections.length;
   }
 }

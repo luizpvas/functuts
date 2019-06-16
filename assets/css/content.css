@@ -1,51 +1,51 @@
 .content h1 {
-    @apply .font-bold .text-2xl .text-blue-800;
+  @apply .font-bold .text-2xl .text-blue-800;
 }
 
 .content h2 {
-    @apply .font-bold .text-xl .mt-8 .text-blue-800;
+  @apply .font-bold .text-xl .text-blue-800;
 }
 
 .content pre {
-    @apply .rounded .my-4;
+  @apply .rounded .my-4;
 }
 
 .content pre code {
-    @apply .text-sm .text-gray-900 .bg-transparent;
+  @apply .text-sm .text-gray-900 .bg-transparent;
 }
 
 .content code {
-    @apply .text-red-600 .bg-red-100 .text-sm;
+  @apply .text-red-600 .bg-red-100 .text-sm;
 }
 
 .content img {
-    @apply .block .mx-auto .my-4 .border .rounded;
+  @apply .block .mx-auto .my-4 .border .rounded;
 }
 
 .content p {
-    @apply .my-2;
+  @apply .my-2;
 }
 
 .content a {
-    @apply .underline .text-blue-700;
+  @apply .underline .text-blue-700;
 }
 
 .content blockquote {
-    @apply .border-l-2 .px-2 .py-1 .text-gray-800 .bg-gray-200 .my-4;
+  @apply .border-l-2 .px-2 .py-1 .text-gray-800 .bg-gray-200 .my-4;
 }
 
 .content blockquote p {
-    @apply .my-0;
+  @apply .my-0;
 }
 
 .content ul {
-    @apply .list-disc .ml-8 .my-4;
+  @apply .list-disc .ml-8 .my-4;
 }
 
 .content ol {
-    @apply .list-decimal .ml-8 .my-4;
+  @apply .list-decimal .ml-8 .my-4;
 }
 
 .content ul li {
-    @apply .mt-1;
+  @apply .mt-1;
 }
