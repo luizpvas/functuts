@@ -3,7 +3,7 @@ In this tutorial we're gonna build a colorpicker component in Elm from scratch. 
 
 # Building a simple and useful Elm component
 
-I think it's fair to say Elm is difficult to learn, specially compared to most mainstream languages. It took me quite some time to feel in control and be productive with. Some of the things we need to learn are: how to deal with immutable data structures, how to model our app with a strong type system and make our app _do_ things with no side effects.
+I think it's fair to say Elm is difficult to learn, especially compared to most mainstream languages. It took me quite some time to feel in control and be productive. Some of the things we need to learn are: how to deal with immutable data structures, how to model our app with a strong type system and make our app _do_ things with no side effects.
 
 Instead of trying to explain those things as separate topics, we're gonna jump straight into a project and I'll do my best to explain the thought process behind each step.
 
