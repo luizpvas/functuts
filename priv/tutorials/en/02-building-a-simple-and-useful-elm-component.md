@@ -3,9 +3,9 @@ In this tutorial we're gonna build a colorpicker component in Elm from scratch. 
 
 # Building a simple and useful Elm component
 
-I think it's fair to say Elm is difficult to learn, specially compared to most mainstream languages. It took me quite some time to feel _in control_ and be productive with. Some of the things we need to learn are how to deal with immutable data structures, how to model our app with a strong type system and make our app _do_ things with no side effects. Maybe you already know those things well, maybe you're somewhat familiar with them, but maybe this is your first introduction to those concepts.
+I think it's fair to say Elm is difficult to learn, specially compared to most mainstream languages. It took me quite some time to feel in control and be productive with. Some of the things we need to learn are: how to deal with immutable data structures, how to model our app with a strong type system and make our app _do_ things with no side effects.
 
-Instead of trying to explain those things as separate topics, we're gonna jump straight into building something without even thinking about them and I'll do my best to explain the thought process behind each step.
+Instead of trying to explain those things as separate topics, we're gonna jump straight into building something and I'll do my best to explain the thought process behind each step.
 
 ## What we're building
 
@@ -36,11 +36,11 @@ type alias Model =
 
 We should also consider the **nothing is selected** state. Elm doesn't have the concept of `null`, so if we say the selected color is a String, it must **always** be a string even when the component has no selected color. So we have to make a choice:
 
--   Go with a String and represent "nothing is selected" with an empty string.
--   Change the type to something that describes the empty state better.
+- Go with a String and represent "nothing is selected" with an empty string.
+- Change the type to something that describes the empty state better.
 
 Using an empty string is fine, and it would work just fine without any issues. I mean, this is a
-very simple component with  a very limited scope &mdash; so let's go with just a String.
+very simple component with a very limited scope &mdash; so let's go with just a String.
 
 > In theory, `Maybe String` is a better type to describe the selected color is optional. It would force us to always handle the missing case and it communicates better our intention &mdash; but let's save it for the future.
 
@@ -57,8 +57,8 @@ type alias Model =
 
 Well... maybe, but I don't like putting it in the model because it's pretty much a static list, a constant. Here's a rule of thumb for deciding if we should store it in the model:
 
--   Does it change over time? If so, the only way to update data in Elm is if it lives in the model.
--   Does the component load with different arguments? An initialization argument must also live in the model.
+- Does it change over time? If so, the only way to update data in Elm is if it lives in the model.
+- Does the component load with different arguments? An initialization argument must also live in the model.
 
 Another way to think about this is if we were modeling a relational database. Would we create a "colors" table to store the list of possible colors as records? I would rather put it in code, maybe directly in the view code. With this in mind, let's declare a static list of colors outside of our Model.
 
@@ -76,8 +76,8 @@ type alias Model =
 
 Now that we have an idea about the shape of the data, let's try to come up with a list of things (actions) users can do on the component:
 
--   Select a color
--   Clear selection
+- Select a color
+- Clear selection
 
 ... is that it? It looks like it is. Only two actions, neat!
 
@@ -112,13 +112,13 @@ update msg model =
 
 Wow, that's a lot to take in. Let's break it apart:
 
--   `update` is a function that takes a `Msg` and a `Model` and it returns a `(Model, Cmd Msg)`
--   Things between parenthesis are called a Tuple. (String, String) is a Tuple of two strings.
--   `Cmd Msg` is read as "A command that produces a Msg". Commands are used for HTTP requests, delayed tasks (think `setTimeout`) and interop with Javascript.
--   We return `Cmd.none` in both branches because we're not doing any HTTP request, delayed task or interop.
--   `case _variable_ of` is similar to a switch statement in other languages.
--   `{ record | field = newVal }` is the syntax for updating a record.
--   The Elm runtime is responsible for calling this function, as you'll see in a minute.
+- `update` is a function that takes a `Msg` and a `Model` and it returns a `(Model, Cmd Msg)`
+- Things between parenthesis are called a Tuple. (String, String) is a Tuple of two strings.
+- `Cmd Msg` is read as "A command that produces a Msg". Commands are used for HTTP requests, delayed tasks (think `setTimeout`) and interop with Javascript.
+- We return `Cmd.none` in both branches because we're not doing any HTTP request, delayed task or interop.
+- `case _variable_ of` is similar to a switch statement in other languages.
+- `{ record | field = newVal }` is the syntax for updating a record.
+- The Elm runtime is responsible for calling this function, as you'll see in a minute.
 
 Oh, did I forgot to mention `case _variable_ of` is exhaustive? It means that if we forgot to handle a value for `Msg` or if we typed a wrong value, the compiler would complain:
 
@@ -128,10 +128,10 @@ Oh, did I forgot to mention `case _variable_ of` is exhaustive? It means that if
 
 It's almost time to build the UI &mdash; but before that, let's take a looooong jump and define our main program with the code below. It may be a lot to take in, so take a deep breath. The reason we need all this code is that even the smallest Elm program, defined with `Browser.element`, needs the following functions:
 
--   `init` - Receives arguments from our Javascript and builds the initial Model
--   `subscriptions` - Used to listen for external events, such as websockets and mouse drag events. We won't use them in this tutorial.
--   `update` - Updates the model based on the produced Msg (that we defined as a list of actions).
--   `view` - Renders the component.
+- `init` - Receives arguments from our Javascript and builds the initial Model
+- `subscriptions` - Used to listen for external events, such as websockets and mouse drag events. We won't use them in this tutorial.
+- `update` - Updates the model based on the produced Msg (that we defined as a list of actions).
+- `view` - Renders the component.
 
 ```elm
 module Colorpicker exposing (main)
@@ -223,12 +223,12 @@ In order to load this program in a webpage, we need a little bit of Javascript g
 import { Elm } from "../elm/Colorpicker.elm";
 
 window.addEventListener("load", ev => {
-    let colorpicker = document.querySelector("#colorpicker");
-    if (colorpicker) {
-        Elm.Colorpicker.init({
-            node: colorpicker
-        });
-    }
+  let colorpicker = document.querySelector("#colorpicker");
+  if (colorpicker) {
+    Elm.Colorpicker.init({
+      node: colorpicker
+    });
+  }
 });
 ```
 
@@ -238,7 +238,7 @@ And this is the code in our HTML page:
 <h1 class="text-xl mb-4">Example app for the Color picker component</h1>
 
 <div class="p-4 border">
-    <div id="colorpicker"></div>
+  <div id="colorpicker"></div>
 </div>
 ```
 
@@ -326,7 +326,7 @@ we're not passing the argument we just added. If you're using an editor with som
 
 ![](/images/examples/colorpicker-editor-error.png)
 
-Let's fix it by wrapping in an anonymous function that runs the check for the selected color. In the example below `(model.selectedColor == hex)` evaluates to either True or False, which is passed as the argument `isSelected` in our `viewColor` function. 
+Let's fix it by wrapping in an anonymous function that runs the check for the selected color. In the example below `(model.selectedColor == hex)` evaluates to either True or False, which is passed as the argument `isSelected` in our `viewColor` function.
 
 ```elm
 view : Model -> Html Msg
@@ -341,7 +341,7 @@ It gets bigger when we click on a color! It's starting to look good!
 
 ![](/images/examples/colorpicker-example-04.png)
 
-Let's look at clearing selection now. It should only be visible when we have a selected color. Let's declare a `viewClearSelection` that conditionally displays the action and it from the `view` function. 
+Let's look at clearing selection now. It should only be visible when we have a selected color. Let's declare a `viewClearSelection` that conditionally displays the action and it from the `view` function.
 
 ```elm
 view : Model -> Html Msg
@@ -379,7 +379,6 @@ This component lives inside the magical Elm world right now, but we need it to c
 
 Those cases are solved in different ways. Let's start with the preselected color, which is essentially an initialization argument, or [Flags](https://guide.elm-lang.org/interop/flags.html) in Elm's terms.
 
-
 ```elm
 type alias Flags =
     { color : String
@@ -397,10 +396,10 @@ The flags are passed from our javascript's `init` function. In the code below, I
 
 ```javascript
 Elm.Colorpicker.init({
-    node: colorpicker,
-    flags: {
-        color: colorpicker.getAttribute('data-color')
-    }
+  node: colorpicker,
+  flags: {
+    color: colorpicker.getAttribute("data-color")
+  }
 });
 ```
 
@@ -410,7 +409,7 @@ Elm.Colorpicker.init({
 
 Now the second problem: saving the selected color. This is actually pretty simple for this component because we're designing it to live inside a form. The only thing we need is a hidden input, and when the browser serializes the form on submit it'll include the value from the input automatically.
 
-Let's add the hidden input in the `view` function. 
+Let's add the hidden input in the `view` function.
 
 ```elm
 view : Model -> Html Msg
@@ -425,7 +424,6 @@ view model =
         ]
 ```
 
-
 > `type_` was named this way because `type` is a keyword in Elm.
 
 If we inspect our DOM tree we should see the hidden input in there:
@@ -438,4 +436,4 @@ Woosh, that was long, but we made it! Oh, and I almost forgot, [here's a gist](h
 
 ## Challenge
 
-* Our boss just called from a meeting. They loved our colorpicker, and they want to use in another part of the software - but there is one problem. The hidden input's name should be different there in order to match the database column name. How would you implement this change?
+- Our boss just called from a meeting. They loved our colorpicker, and they want to use in another part of the software - but there is one problem. The hidden input's name should be different there in order to match the database column name. How would you implement this change?

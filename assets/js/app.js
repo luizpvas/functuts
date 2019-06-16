@@ -1,7 +1,13 @@
-import css from "../css/app.css";
+import "../css/app.css";
 import "./prism.js";
 
 window.addEventListener("load", ev => {
+  initMenuSearch();
+  initMobile();
+  initSplitBySection();
+});
+
+function initMenuSearch() {
   let search = document.querySelector("#search");
   let links = Array.from(
     document.querySelectorAll('[data-target="menu-link"]')
@@ -20,9 +26,8 @@ window.addEventListener("load", ev => {
 
     links.map(link => {
       let containsText =
-        link.textContent
-          .toLocaleLowerCase()
-          .indexOf(search.value.toLowerCase()) === -1;
+        link.textContent.toLowerCase().indexOf(search.value.toLowerCase()) ===
+        -1;
 
       if (containsText) {
         link.style.display = "none";
@@ -31,9 +36,8 @@ window.addEventListener("load", ev => {
       }
     });
   }
+}
 
-  initMobile();
-});
 function initMobile() {
   let open = document.querySelector("#mobile-open-menu");
   let close = document.querySelector("#mobile-close-menu");
@@ -50,4 +54,31 @@ function initMobile() {
     close.style.display = "none";
     open.style.display = "block";
   });
+}
+
+function initSplitBySection() {
+  let splitButton = document.querySelector("#split-by-sections");
+  let tutorial = document.querySelector("#tutorial");
+
+  if (splitButton) {
+    splitButton.addEventListener("click", ev => {
+      let sections = [];
+      let currentSection = 0;
+
+      Array.from(tutorial.childNodes).map(node => {
+        if (currentSection == 0 && node.nodeType == Node.TEXT_NODE) {
+          return;
+        }
+
+        if (node.tagName == "H1" || node.tagName == "H2") {
+          sections[currentSection] = [node];
+          currentSection += 1;
+        } else {
+          sections[currentSection].push(node);
+        }
+      });
+
+      console.log(sections);
+    });
+  }
 }
