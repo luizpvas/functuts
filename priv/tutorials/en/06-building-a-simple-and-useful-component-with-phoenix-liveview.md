@@ -3,7 +3,14 @@ In this tutorial, we're going to implement a subscription page for a fictional S
 
 # Building a simple and useful component with Phoenix LiveView
 
-Phoenix LiveView is an Elixir library for writing front-end components backed by the server. With LiveView, we can make interactive UIs without writing a single line of Javascript. In this tutorial, we're going to implement a subscription page for a fictional SAAS company.
+Phoenix LiveView is an Elixir library for writing front-end components backed by the server. With LiveView, we can make interactive UIs without writing a single line of Javascript.
+
+It's all in the same language - but better - the same runtime and environment. I've seen people question the benefits of "isomorphic" apps, usually using Node on the backend and any JS framework on the client. LiveView is different because we're not only using the same language, we're sharing the same environment with the server. We have access to everything running on the server. In particular, I'm really excited about:
+
+- A single place for translations with Gettext.
+- Routing helpers are available. Have you ever hardcoded a URL in a JS file?
+
+In this tutorial, we're going to implement a subscription page for a fictional SAAS company.
 
 ## What we're building
 
