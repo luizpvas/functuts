@@ -72,6 +72,8 @@ function initSplitBySection() {
 
   if (splitButton) {
     backToFullTextButton.addEventListener("click", ev => {
+      tutorial.classList.remove("content--split");
+
       currentSection = 0;
       hideControls();
       splitContainer.style.display = "flex";
@@ -85,6 +87,8 @@ function initSplitBySection() {
     });
 
     splitButton.addEventListener("click", ev => {
+      tutorial.classList.add("content--split");
+
       splitContainer.style.display = "none";
       sections = [];
       let index = 0;

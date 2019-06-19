@@ -5,7 +5,7 @@ In this tutorial, we're going to implement a subscription page for a fictional S
 
 Phoenix LiveView is a library for writing front-end components backed by the server. With LiveView, we can make interactive UIs without writing a single line of Javascript.
 
-I've seen people question the benefits of "isomorphic" apps, usually using Node on the backend. LiveView is different because we're not only using the same language, we're sharing the same environment between client and server, or rather, it's all server-side now and the client becomes just a shell. In particular, I'm excited about:
+I've seen people question the benefits of "isomorphic" apps, usually using Node on the backend. LiveView is different because we're not only using the same language, we're sharing the same environment between client and server, or rather, it's all server-side now and the client is just a shell. In particular, I'm excited about:
 
 - A single place for translations with Gettext.
 - Routing helpers. Have you ever hardcoded a URL in a JS file?

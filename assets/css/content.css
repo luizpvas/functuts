@@ -3,7 +3,11 @@
 }
 
 .content h2 {
-  @apply .font-bold .text-xl .text-blue-800;
+  @apply .font-bold .text-xl .mt-10 .mb-3 .text-blue-800;
+}
+
+.content.content--split h2 {
+  @apply .mt-0;
 }
 
 .content pre {
