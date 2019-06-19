@@ -78,6 +78,12 @@ Google Search Console is showing that I have 2 clicks from 4 impressions, that i
 
 There is one thing I'm not sure yet. The Coverage report is telling me that I have 2 valid and indexed pages but 4 detected but excluded pages. All excluded pages appear in the sitemap, so maybe this is an issue with robots.txt? [This StackOverflow question](https://stackoverflow.com/questions/4276957/how-to-configure-robots-txt-to-allow-everything) suggests an empty `Disallow` instead of `Allow: /`. I just made this change and pushed to the server. Let's see in a few days if it changes anything.
 
+## 8 days later
+
+Nothing changed. Google still has only indexed the root page and one tutorial, and I'm not sure why.
+
+![](/images/examples/seo/8-days-later.png)
+
 ## Next steps
 
 This is a _work-in-progress_ article. I'll keep updating it with more stuff as I attempt to improve Google ranking.
