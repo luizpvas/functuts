@@ -84,6 +84,13 @@ Nothing changed. Google still has only indexed the root page and one tutorial, a
 
 ![](/images/examples/seo/8-days-later.png)
 
+## 17 days later
+
+Finally, Google has indexed all 7 pages (root + 6 tutorials). When searching for "functuts" directly, it shows this website as the second result beneath a Github gist from the second tutorial.
+
+I haven't updated or written new tutorials in the last couple of weeks. Maybe this is a good thing, and Google dislikes when the content changes too often? I'm not sure.
+
+
 ## Next steps
 
 This is a _work-in-progress_ article. I'll keep updating it with more stuff as I attempt to improve Google ranking.
